@@ -20,11 +20,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/kv",
+					"raw": "https://kv-storage-tarantool.herokuapp.com/kv",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"kv-storage-tarantool",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"kv"
 					]
@@ -38,14 +40,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/kv/awesome key",
+					"raw": "https://kv-storage-tarantool.herokuapp.com/kv/id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"kv-storage-tarantool",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"kv",
-						"awesome key"
+						"id"
 					]
 				}
 			},
@@ -66,14 +70,16 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/kv/awesome key",
+					"raw": "https://kv-storage-tarantool.herokuapp.com/kv/id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"kv-storage-tarantool",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"kv",
-						"awesome key"
+						"id"
 					]
 				}
 			},
@@ -85,14 +91,16 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/kv/awesome key",
+					"raw": "https://kv-storage-tarantool.herokuapp.com/kv/id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"kv-storage-tarantool",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"kv",
-						"awesome key"
+						"id"
 					]
 				}
 			},
