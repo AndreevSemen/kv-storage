@@ -1,6 +1,7 @@
 FROM tarantool/tarantool:1
 
-EXPOSE 8080
+ENV PORT=8080
+EXPOSE $PORT
 
 COPY ./ /opt/tarantool
 

@@ -89,7 +89,7 @@ end
 
 
 local function RunServer(port)
-	local server = httpserver.new('0.0.0.0', port)
+	local server = httpserver.new('0.0.0.0', os.getenv("PORT"))
 
 	server:route({method = 'POST', path = '/kv'}, Create)
 	server:route({method = 'PUT',  path = '/kv/:id'}, Update)
