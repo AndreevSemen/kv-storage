@@ -1,6 +1,4 @@
-setup:
-  addons:
-    - plan: suryatmodulus/heroku16-buildpack-lua
 build:
   docker:
     web: Dockerfile
+    worker: worker/Dockerfilele
