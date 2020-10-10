@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "15d40073-771c-4940-a08b-4fb79766392b",
+		"name": "tarantool kv storage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /kv",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\": \"awesome key\",\n    \"value\": {\n        \"hello\": \"world\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/kv",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /kv/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/kv/awesome key",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kv",
+						"awesome key"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /kv/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"value\": {\n        \"awesome array\": [1, 2, 3, 4, 5]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/kv/awesome key",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kv",
+						"awesome key"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /kv/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/kv/awesome key",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kv",
+						"awesome key"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
