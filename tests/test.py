@@ -45,6 +45,12 @@ if __name__ == '__main__':
 
         resp = requests.post(kv_url, json=record)
         assert resp.status_code == 409
+    print('POST test passed')
+
+    for record in post_list:
+        resp = requests.get(kv_url + '/' + record['key'])
+        assert resp.status_code == 200
+        assert resp.json() == record['value']
 
     for record in put_list:
         resp = requests.get(kv_url + '/' + record['key'])
@@ -59,6 +65,7 @@ if __name__ == '__main__':
         resp = requests.get(kv_url + '/' + record['key'])
         assert resp.status_code == 200
         assert resp.json()['value'] == record['value']
+    print('PUT test passed')
 
     for record in post_list:
         resp = requests.delete(kv_url + '/' + record['key'])
@@ -69,3 +76,6 @@ if __name__ == '__main__':
 
         resp = requests.delete(kv_url + '/' + record['key'])
         assert resp.status_code == 404
+    print('DELETE test passed')
+
+print("passed")
