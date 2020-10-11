@@ -20,10 +20,26 @@ https://kv-storage-tarantool.herokuapp.com
 | Удалить запись с ключем `key`                               | `DELETE`  | `/kv/key` |
 
 
+## Run tests
+
+Чтобы запустить тесты, достаточно выполнить команду:
+```shell script
+python tests/test.py
+```
+
+## Navigation
+
+`kvstorage.lua` - ***Lua***-скрипт, реализующий сервис над ***Tarantool***
+
+`tests` - директория с тестами
+
+`Dockerfile` - образ для запуска контейнера на ***Heroku***
+
+
 ## Некоректное тело запроса
 При попытке доступа к записи по несуществующему ключу
 возвращется статус 404 и json:
-```json
+```JSON
 {
     "error": "key not found"
 }
@@ -31,17 +47,17 @@ https://kv-storage-tarantool.herokuapp.com
 
 ## Создать запись
 ### Body
-```json
+```JSON
 {
     "key": "awesome key",
     "value": {
-        ...SOME ARBITRARY JSON...
+        "SOME ARBITRARY JSON": {}
     }
 }
 ```
 ### Response
 В случае успеха возвращается статус `200` и json в теле:
-```json
+```JSON
 {
     "result": "record created"
 }
@@ -49,7 +65,7 @@ https://kv-storage-tarantool.herokuapp.com
 
 При попытке создать запись по существующему ключу
 возвращется статус 409 и json:
-```json
+```JSON
 {
     "error": "key already exists"
 }
@@ -59,10 +75,10 @@ https://kv-storage-tarantool.herokuapp.com
 ## Получить запись
 ### Response
 В случае успеха возвращается статус `200` и json в теле:
-```json
+```JSON
 {
     "value": {
-        ...SOME ARBITRARY JSON...
+        "SOME ARBITRARY JSON": {}
     }
 }
 ```
@@ -70,16 +86,16 @@ https://kv-storage-tarantool.herokuapp.com
 
 ## Обновить запись
 ### Body
-```json
+```JSON
 {
     "value": {
-        ...SOME ARBITRARY JSON...
+        "SOME ARBITRARY JSON": {}
     }
 }
 ```
 ### Response
 В случае успеха возвращается статус `200` и json в теле:
-```json
+```JSON
 {
     "result": "record updated"
 }
@@ -88,12 +104,12 @@ https://kv-storage-tarantool.herokuapp.com
 ## Удалить запись
 ### Response
 В случае успеха возвращается статус `200` и json в теле:
-```json
+```JSON
 {
     "deleted": {
         "key": "awesome key",
         "value": {
-            ...SOME ARBITRARY JSON...
+            "SOME ARBITRARY JSON": {}
         }
     }
 }
